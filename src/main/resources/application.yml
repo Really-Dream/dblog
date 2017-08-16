@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/dblog?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  activiti:
+    check-process-definitions: false
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.dream.dblog.entity
+
+server:
+  port: 80
+
+logging.config: classpath:logback-boot.xml
+
+
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dream.dblog.mapper.BlogMapper" >
+
+    <select id="showParent"  resultType="com.dream.dblog.entity.Blog">
+        SELECT * FROM  article where parent_id = 0 ORDER BY id DESC
+    </select>
+
+    <select id="showChild" resultType="com.dream.dblog.entity.Blog">
+        SELECT * FROM  article where parent_id = #{id} ORDER BY id DESC
+    </select>
+
+    <select id="getParentTitle" resultType="String">
+        SELECT title FROM  article WHERE id = #{id}
+    </select>
+
+    <select id="getBlog" resultType="com.dream.dblog.entity.Blog">
+        SELECT * FROM article WHERE id = #{id}
+    </select>
+
+    <insert id="insert">
+        INSERT INTO article VALUES (#{id},#{parent_id},#{title},#{article},#{create_time},#{modify_time})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM article WHERE id=#{id} or parent_id=#{id}
+    </delete>
+
+    <update id="update">
+        UPDATE article SET title = #{title},modify_time = #{modify_time},article=#{article} WHERE id=#{id}
+    </update>
+
+    <select id="getMaxId" resultType="Integer">
+        SELECT IFNULL(MAX(id),0) id FROM article
+    </select>
+</mapper>
