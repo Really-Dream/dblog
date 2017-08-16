@@ -27,7 +27,7 @@
 
 <header >
     <div id="navbar">
-        <a id="logo" data-logo-height="37" class="has-logo" href="https://github.com/Really-Dream/d-flow" title="GitHub">
+        <a id="logo" data-logo-height="37" class="has-logo" href="https://github.com/Really-Dream/dblog" title="GitHub">
             <image style="width: 150px" src="/other/photo/dreamlogo.png"/>
         </a>
         <div class="container">
