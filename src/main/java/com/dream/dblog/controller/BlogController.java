@@ -18,7 +18,7 @@ import java.util.List;
  *
  */
 @Controller
-@RequestMapping(value = "blog")
+@RequestMapping(value = {"blog",""})
 public class BlogController {
 
     @Autowired
@@ -73,7 +73,7 @@ public class BlogController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "index")
+    @RequestMapping(value = {"index",""})
     public String index(Model model,String id){
         List<Blog> parent_title = blogMapper.showParent();
         if(id != null){

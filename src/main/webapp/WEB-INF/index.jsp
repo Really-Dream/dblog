@@ -5,21 +5,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <meta name="description" content="Vedad Siljak’s Portfolio">
+    <meta name="description" content="Dream">
     <title>D丶ream</title>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/other/photo/favicon.ico" type="image/x-icon" />
 
-    <link type="text/css" rel="stylesheet" href="http://vedadsiljak.com/wp-content/themes/semplice/css/reset.css">
-    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <link  href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <%--<link type="text/css" rel="stylesheet" href="http://vedadsiljak.com/wp-content/themes/semplice/css/reset.css">--%>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/other/css/reset.css">
+    <%--<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>--%>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/other/css/family.css">
+    <%--<link  href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>--%>
 
 
-    <link type="text/css" rel="stylesheet" href="http://vedadsiljak.com/wp-content/themes/semplice/style.css">
-    <link type="text/css" rel="stylesheet" href="/other/css/index.css">
+    <%--<link type="text/css" rel="stylesheet" href="http://vedadsiljak.com/wp-content/themes/semplice/style.css">--%>
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/other/css/style.css">
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/other/css/index.css">
 
 
     <!-- <link rel="shortcut icon" href="http://vedadsiljak.com/wp-content/uploads/2016/03/favicon.png"> 				 -->
 
-    <script type='text/javascript' src='http://vedadsiljak.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+    <%--<script type='text/javascript' src='http://vedadsiljak.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>--%>
+    <script type='text/javascript' src='${pageContext.request.contextPath}/other/js/jquery.js'></script>
 
 </head>
 
@@ -28,7 +33,7 @@
 <header >
     <div id="navbar">
         <a id="logo" data-logo-height="37" class="has-logo" href="https://github.com/Really-Dream/dblog" title="GitHub">
-            <image style="width: 150px" src="/other/photo/dreamlogo.png"/>
+            <image style="width: 150px" src="${pageContext.request.contextPath}/other/photo/dreamlogo.png"/>
         </a>
         <div class="container">
             <div class="row">
@@ -53,10 +58,10 @@
                 <li class="menu-item menu-item-type-post_type menu-item-object-work menu-item-558"><a href="/blog/index">HOME</a></li>
                 <c:forEach var="item" items="${parent_title}">
                     <c:if test="${id != undefined && id == item.id}">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-work current-menu-item menu-item-559"><a href="/blog/index">${item.title}</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-work current-menu-item menu-item-559"><a href="${pageContext.request.contextPath}/blog/index">${item.title}</a></li>
                     </c:if>
                     <c:if test="${id == undefined || id != item.id}">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-work menu-item-${item.id}"><a href="/blog/index?id=${item.id}">${item.title}</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-work menu-item-${item.id}"><a href="${pageContext.request.contextPath}/blog/index?id=${item.id}">${item.title}</a></li>
                     </c:if>
                 </c:forEach>
             </ul>
@@ -87,10 +92,10 @@
                                 <div class="wysiwyg-ce no-offset span10" id="parent_title">
                                     <c:forEach var="item" items="${list}">
                                         <c:if test="${item.parent_id == 0}">
-                                            <p data-font-size="44px" data-line-height="88px"><a href="/blog/index?id=${item.id}"><font color='#333'>${item.title}</font></a></p>
+                                            <p data-font-size="44px" data-line-height="88px"><a href="${pageContext.request.contextPath}/blog/index?id=${item.id}"><font color='#333'>${item.title}</font></a></p>
                                         </c:if>
                                         <c:if test="${item.parent_id != 0}">
-                                            <p data-font-size="44px" data-line-height="88px"><a target="_blank" href="/blog/readBlog?id=${item.id}"><font color='#333'>${item.title}</font></a></p>
+                                            <p data-font-size="44px" data-line-height="88px"><a target="_blank" href="${pageContext.request.contextPath}/blog/readBlog?id=${item.id}"><font color='#333'>${item.title}</font></a></p>
                                         </c:if>
                                     </c:forEach>
                                     <%--<p data-font-size="20px" data-line-height="44px">--%>
@@ -105,7 +110,8 @@
         </div>
     </div>
 </div>
-<script type='text/javascript' src='http://vedadsiljak.com/wp-content/themes/semplice/js/scripts.min.js?ver=4.4.2'></script>
-<script src="/markdown/jquery-3.2.1.min.js"></script>
+<%--<script type='text/javascript' src='http://vedadsiljak.com/wp-content/themes/semplice/js/scripts.min.js?ver=4.4.2'></script>--%>
+<script src="${pageContext.request.contextPath}/other/js/scripts.min.js"></script>
+<script src="${pageContext.request.contextPath}/markdown/jquery-3.2.1.min.js"></script>
 </body>
 </html>

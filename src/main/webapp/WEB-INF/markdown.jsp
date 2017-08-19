@@ -4,26 +4,28 @@
 <html>
 <head>
   <title>Markdown Editor</title>
-  <script src="/markdown/markdown-it.js"></script>
-  <script src="/markdown/markdown-it-footnote.js"></script>
-  <script src="/markdown/highlight.pack.js"></script>
-  <script src="/markdown/emojify.js"></script>
-  <script src="/markdown/codemirror/lib/codemirror.js"></script>
-  <script src="/markdown/codemirror/overlay.js"></script>
-  <script src="/markdown/codemirror/xml/xml.js"></script>
-  <script src="/markdown/codemirror/markdown/markdown.js"></script>
-  <script src="/markdown/codemirror/gfm/gfm.js"></script>
-  <script src="/markdown/codemirror/javascript/javascript.js"></script>
-  <script src="/markdown/codemirror/css/css.js"></script>
-  <script src="/markdown/codemirror/htmlmixed/htmlmixed.js"></script>
-  <script src="/markdown/codemirror/lib/util/continuelist.js"></script>
-  <script src="/markdown/rawinflate.js"></script>
-  <script src="/markdown/rawdeflate.js"></script>
-  <script src="/markdown/jquery-3.2.1.min.js"></script>
-  <link rel="stylesheet" href="/markdown/base16-light.css">
-  <link rel="stylesheet" href="/markdown/codemirror/lib/codemirror.css">
-  <link rel="stylesheet" href="/markdown/default.css">
-  <link rel="stylesheet" href="/markdown/index.css">
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/other/photo/favicon.ico" type="image/x-icon" />
+
+  <script src="${pageContext.request.contextPath}/markdown/markdown-it.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/markdown-it-footnote.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/highlight.pack.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/emojify.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/codemirror/lib/codemirror.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/codemirror/overlay.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/codemirror/xml/xml.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/codemirror/markdown/markdown.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/codemirror/gfm/gfm.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/codemirror/javascript/javascript.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/codemirror/css/css.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/codemirror/htmlmixed/htmlmixed.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/codemirror/lib/util/continuelist.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/rawinflate.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/rawdeflate.js"></script>
+  <script src="${pageContext.request.contextPath}/markdown/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/markdown/base16-light.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/markdown/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/markdown/default.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/markdown/index.css">
   <style>
     .dw-btn { cursor: pointer; border: none; outline: none; font-size: 14px; padding: 10px 32px; display: inline-block; vertical-align: middle;  *vertical-align: auto;
       *zoom: 1;
@@ -77,7 +79,7 @@
         var title = $("#title").val();
         $.ajax({
             type: "POST",
-            url: "/blog/insert",
+            url: "${pageContext.request.contextPath}/blog/insert",
             data: {
                 "article":R(article),
                 "title":title,
@@ -86,7 +88,7 @@
             },
             dataType: "json",
             success: function (data) {
-                window.location.href="/blog/readBlog?id=${blog.id}";
+                window.location.href="${pageContext.request.contextPath}/blog/readBlog?id=${blog.id}";
             },
             error: function (msg) {
             }
@@ -182,7 +184,7 @@
       html: 'xml'
     };
 
-    emojify.setConfig({ img_dir: '/markdown/emoji' });
+    emojify.setConfig({ img_dir: '${pageContext.request.contextPath}/markdown/emoji' });
 
     if(window.location.hash && editor != undefined){
         var h = window.location.hash.replace(/^#/, '');
