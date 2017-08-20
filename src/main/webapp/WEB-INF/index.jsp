@@ -35,10 +35,10 @@
         <a id="logo" data-logo-height="37" class="has-logo" href="https://github.com/Really-Dream/dblog" title="GitHub">
             <image style="width: 150px" src="${pageContext.request.contextPath}/other/photo/dreamlogo.png"/>
         </a>
-        <div class="container">
-            <div class="row">
-                <div class="span12 navbar-inner">
-                    <div class="nav-wrapper">
+        <div class="container" >
+            <div class="row" >
+                <div class="span12 navbar-inner" style="height: 120px">
+                    <div class="nav-wrapper" style="margin-right: 10%">
                         <div class="controls">
                             <a class="open-nav">
                                 <span class="nav-icon"></span>
@@ -69,17 +69,22 @@
     </div>
 </div>
 
-<div id="wrapper">
+<div id="wrapper" style="margin-left: 5%">
     <div id="content">
         <!-- content fade -->
         <div class="fade-content">
-            <div id="content-holder" class="">
-                <div id="content_pkogaqi0u" class="content-p" >
+            <div id="content-holder" style="margin-top: 150px !important;">
+                <div class="content-p" >
                     <div class="content-container" style="padding-top: 20px; display: block; background-color: transparent;" >
                         <div class="container">
                             <div class="row">
                                 <div >
                                     <p data-font-size="96px" data-line-height="88px" id="title">${title}</p>
+
+                                    <%--<p data-font-size="20px" data-line-height="44px">--%>
+                                        <%--<span><span class="regular">你可以发火，但也要发光</span></span>--%>
+                                        <%--<span><span class="regular">你可以发火，但也要发光</span></span>--%>
+                                    <%--</p>--%>
                                 </div>
                             </div>
                         </div>
@@ -98,9 +103,6 @@
                                             <p data-font-size="44px" data-line-height="88px"><a target="_blank" href="${pageContext.request.contextPath}/blog/readBlog?id=${item.id}"><font color='#333'>${item.title}</font></a></p>
                                         </c:if>
                                     </c:forEach>
-                                    <%--<p data-font-size="20px" data-line-height="44px">--%>
-                                        <%--<span style="color:222;"><span class="regular">Designed at COBE in 2016.</span></span>--%>
-                                    <%--</p>--%>
                                 </div>
                             </div>
                         </div>
